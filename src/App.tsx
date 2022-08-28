@@ -1,34 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import About from './pages/About';
+import Home from './pages/Home';
+import Subscribe from './pages/Subscribe';
+import { ThemeProvider } from 'styled-components';
+import { Reset } from 'styled-reset';
+import GlobalStyle from './styles/Global.styled';
+import Header from './components/Header';
+
+const theme = {
+  colors: {
+    darkCyan: '#0E8784',
+    lightCyan: '#66D2CF',
+    darkGreyBlue: '#333D4B',
+    paleOrange: '#FDD6BA',
+    lightCream: '#FEFCF7',
+    grey: '#83888F',
+    darkGrey: '#2C343E',
+    lightGrey: '#E2DEDB',
+    idk: '#F4F1EB',
+  },
+
+  fonts: {
+    barlow: "'Barlow', sans-serif",
+    fraunces: "'Fraunces', serif",
+  },
+
+  // classes: {
+  //   container: '12.8rem'
+  // },
+
+  breakpoints: {
+    tablet: '481px',
+    desktop: '780px',
+    lgDesktop: '1280px',
+  },
+};
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <ThemeProvider theme={theme}>
+      <Reset />
+      <GlobalStyle />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="subscribe" element={<Subscribe />} />
+      </Routes>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
