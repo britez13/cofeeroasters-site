@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { Reset } from 'styled-reset';
 import GlobalStyle from './styles/Global.styled';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 const theme = {
   colors: {
@@ -30,9 +31,9 @@ const theme = {
   // },
 
   breakpoints: {
-    tablet: '481px',
-    desktop: '780px',
-    lgDesktop: '1280px',
+    tablet: '600px',
+    desktop: '992px',
+    // lgDesktop: '1200px',
   },
 };
 
@@ -47,6 +48,7 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="subscribe" element={<Subscribe />} />
       </Routes>
+      <Footer />
     </ThemeProvider>
   );
 }

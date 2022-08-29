@@ -134,6 +134,10 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <section className='work'>
+        <h4 className='work__title'>How it works</h4>
+      </section>
     </HomeStyled>
   );
 };

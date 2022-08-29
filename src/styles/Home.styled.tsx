@@ -112,7 +112,7 @@ const HomeStyled = styled.main`
         font-size: 11rem;
       }
 
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         font-size: 15rem;
       }
     }
@@ -130,7 +130,7 @@ const HomeStyled = styled.main`
       @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
       }
     }
 
@@ -222,6 +222,11 @@ const HomeStyled = styled.main`
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         font-size: 3.2rem;
       }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        font-size: 4rem;
+        padding-top: 10rem;
+      }
     }
 
     &__description {
@@ -235,6 +240,11 @@ const HomeStyled = styled.main`
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         max-width: 54rem;
       }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+      }
     }
 
     &__wrapper {
@@ -246,6 +256,13 @@ const HomeStyled = styled.main`
 
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         margin-top: 4rem;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3rem;
       }
     }
 
@@ -264,17 +281,41 @@ const HomeStyled = styled.main`
         width: 57.3rem;
         height: 18rem;
         flex-direction: row;
+        justify-content: flex-start;
+        padding-left: 8rem;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        width: 35rem;
+        height: 38.2rem;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5rem;
+        padding-left: 0;
       }
     }
 
     &__image {
       width: 7.2rem;
       height: 7.2rem;
+      object-fit: contain;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        margin-top: 3rem;
+      }
     }
 
     &__name {
       font-size: 2.4rem;
       color: ${({ theme }) => theme.colors.lightCream};
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        text-align: start;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        text-align: center;
+      }
     }
 
     &__characteristic {
@@ -283,7 +324,25 @@ const HomeStyled = styled.main`
       line-height: 2.5rem;
       max-width: 21.2rem;
       margin-top: 3rem;
+      mix-blend-mode: normal;
+      opacity: 0.9;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        text-align: start;
+        max-width: 34.4rem;
+      }
+
+      @media(min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        text-align: center;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        max-width: 21.2rem;
+      }
     }
+  }
+
+  .work {
+    margin-top: 65rem;
   }
 `;
 
