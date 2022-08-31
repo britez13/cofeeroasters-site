@@ -145,5 +145,187 @@ const AboutStyled = styled.main`
       }
     }
   }
+
+  .quality {
+    margin-top: 12rem;
+    height: 50.9rem;
+    background-color: ${({ theme }) => theme.colors.darkGreyBlue};
+    border-radius: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      height: 48.8rem;
+      margin-top: 28rem;
+    }
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 10rem;
+      height: 47.4rem;
+    }
+
+    &__image {
+      width: 27.9rem;
+      height: 15.6rem;
+      background-image: url('../../src/assets/about/mobile/image-quality.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 0.7rem;
+      margin-top: -8rem;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        width: 57.3rem;
+        height: 32rem;
+        background-image: url('../../src/assets/about/tablet/image-quality.jpg');
+
+        margin-top: -15rem;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        width: 44.5rem;
+        height: 47.4rem;
+        background-image: url('../../src/assets/about/desktop/image-quality.jpg');
+        margin-top: -8rem;
+      }
+    }
+
+    &__info {
+      max-width: 27.9rem;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        max-width: 54rem;
+        margin-top: 8rem;
+      }
+    }
+
+    &__subheading {
+      font-size: 2.8rem;
+      line-height: 2.8rem;
+      color: ${({ theme }) => theme.colors.lightCream};
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        font-size: 3.2rem;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        text-align: start;
+        font-size: 4rem;
+      }
+    }
+
+    &__description {
+      margin-top: 3rem;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      color: ${({ theme }) => theme.colors.lightCream};
+      mix-blend-mode: normal;
+      opacity: 0.8;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        text-align: start;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+      }
+    }
+  }
+
+  .headquarters {
+    margin-top: 10rem;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      max-width: 104.5rem;
+      margin-inline: auto;
+    }
+
+    &__subheading {
+      font-size: 2.4rem;
+      color: ${({ theme }) => theme.colors.grey};
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        text-align: start;
+      }
+    }
+
+    &__main-wrapper {
+      margin-top: 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5rem;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        margin-top: 5.5rem;
+        flex-direction: row;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        gap: 12rem;
+      }
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        align-items: flex-start;
+        gap: 4rem;
+      }
+    }
+
+    &__secondary-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        gap: 3rem;
+      }
+    }
+
+    &__image {
+      width: 4.1rem;
+      height: 4.9rem;
+    }
+
+    &__name {
+      font-size: 2.8rem;
+      color: ${({ theme }) => theme.colors.darkGreyBlue};
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        text-align: start;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        font-size: 3.2rem;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        gap: 0.8rem;
+      }
+    }
+
+    &__description {
+      font-size: 1.6rem;
+      color: ${({ theme }) => theme.colors.darkGreyBlue};
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        text-align: start;
+      }
+    }
+  }
 `;
 export default AboutStyled;

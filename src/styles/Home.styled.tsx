@@ -2,9 +2,12 @@ import styled from 'styled-components';
 import hero from '../assets/home/mobile/image-hero-coffeepress.jpg';
 
 const HomeStyled = styled.main`
+  width: min(95%, 128rem);
+  margin-inline: auto;
+
   .hero {
-    margin-inline: auto;
-    width: min(95%, 128rem);
+    /* margin-inline: auto;
+    width: min(95%, 128rem); */
     height: 50rem;
     border-radius: 1rem;
     background-image: url('../../src/assets/home/mobile/image-hero-coffeepress.jpg');
@@ -96,7 +99,7 @@ const HomeStyled = styled.main`
 
   .collection {
     margin-top: 10rem;
-    width: min(95%, 128rem);
+    /* width: min(95%, 128rem); */
     margin-inline: auto;
 
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
@@ -200,7 +203,7 @@ const HomeStyled = styled.main`
   .choose {
     margin-top: 15rem;
     margin-inline: auto;
-    width: min(95%, 128rem);
+    /* width: min(95%, 128rem); */
     background-color: ${({ theme }) => theme.colors.darkGrey};
     border-radius: 0.7rem;
     max-height: 90rem;
@@ -261,7 +264,7 @@ const HomeStyled = styled.main`
       @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         flex-direction: row;
         justify-content: center;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
         gap: 3rem;
       }
     }
@@ -332,7 +335,7 @@ const HomeStyled = styled.main`
         max-width: 34.4rem;
       }
 
-      @media(min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         text-align: center;
         font-size: 1.6rem;
         line-height: 2.6rem;
@@ -341,8 +344,141 @@ const HomeStyled = styled.main`
     }
   }
 
-  .work {
+  .process {
     margin-top: 65rem;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      margin-top: 40rem;
+    }
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      margin-top: 30rem;
+      max-width: 104.5rem;
+      margin-inline: auto;
+    }
+
+    &__title {
+      font-size: 2.4rem;
+      color: ${({ theme }) => theme.colors.grey};
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        text-align: start;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        font-size: 3.2rem;
+      }
+    }
+
+    &__first-wrapper {
+      display: none;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        margin-top: 5rem;
+        display: flex;
+        gap: 20.4rem;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        gap: 33rem;
+      }
+    }
+
+    &__circle1,
+    &__circle2,
+    &__circle3 {
+      width: 3.1rem;
+      height: 3.1rem;
+      border: 1px solid ${({ theme }) => theme.colors.darkCyan};
+      border-radius: 50%;
+      position: relative;
+    }
+
+    &__circle1::after,
+    &__circle2::after {
+      position: absolute;
+      z-index: -1;
+      content: '';
+      display: block;
+      width: 20.4rem;
+      height: 0.2rem;
+      background-color: ${({ theme }) => theme.colors.paleOrange};
+      inset: 50% 0 0 100%;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        width: 33.1rem;
+      }
+    }
+
+    &__second-wrapper {
+      margin-top: 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        flex-direction: row;
+        gap: 2rem;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        gap: 10rem;
+      }
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        gap: 4rem;
+        align-items: flex-start;
+        max-width: 21.5rem;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        max-width: 26rem;
+      }
+    }
+
+    &__number {
+      font-size: 7.2rem;
+      color: ${({ theme }) => theme.colors.paleOrange};
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        text-align: start;
+      }
+    }
+
+    &__name {
+      font-size: 2.8rem;
+      color: ${({ theme }) => theme.colors.darkGreyBlue};
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        text-align: start;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        font-size: 3.2rem;
+      }
+    }
+
+    &__description {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      color: ${({ theme }) => theme.colors.darkGreyBlue};
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        text-align: start;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+      }
+    }
   }
 `;
 

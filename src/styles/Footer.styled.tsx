@@ -5,7 +5,8 @@ const FooterStyled = styled.footer`
   min-height: 34.6rem;
   background-color: ${({ theme }) => theme.colors.darkGreyBlue};
   margin-inline: auto;
-  margin-block: 5rem;
+  margin-top: 10rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

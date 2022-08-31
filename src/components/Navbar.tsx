@@ -18,7 +18,7 @@ const Navbar = () => {
         </li>
 
         <li className="navbar__list">
-          <NavLink className="navbar__link" to="/subscribe">
+          <NavLink className="navbar__link" to="/plan">
             Create your plan
           </NavLink>
         </li>

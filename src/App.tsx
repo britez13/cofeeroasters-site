@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import About from './pages/About';
 import Home from './pages/Home';
-import Subscribe from './pages/Subscribe';
+import Plan from './pages/Plan';
 import { ThemeProvider } from 'styled-components';
 import { Reset } from 'styled-reset';
 import GlobalStyle from './styles/Global.styled';
@@ -46,7 +46,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="subscribe" element={<Subscribe />} />
+        <Route path="plan" element={<Plan />} />
       </Routes>
       <Footer />
     </ThemeProvider>

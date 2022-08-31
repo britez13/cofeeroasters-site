@@ -41,11 +41,7 @@ const About = () => {
       </section>
 
       <section className="quality">
-        <img
-          className="quality__image"
-          src="../../src/assets/about/mobile/image-quality.jpg"
-          alt="Cofee cup"
-        />
+        <div className="quality__image"></div>
         <div className="quality__info">
           <h3 className="quality__subheading">Uncompromising quality</h3>
           <p className="quality__description">
@@ -61,41 +57,45 @@ const About = () => {
 
       <section className="headquarters">
         <h3 className="headquarters__subheading">Our headquarters</h3>
-        <div className="headquarters__item">
-          <img src={UKIllustration} alt="United Kingdom illustration" />
-          <div className="headquarters__wrapper">
-            <h3 className="headquarters__name">United Kingdom</h3>
-            <div className="headquarters__info">
-              <p className="headquarters__description">68 Asfordby Rd</p>
-              <p className="headquarters__description">Alcaston</p>
-              <p className="headquarters__description">SY6 1YA</p>
-              <p className="headquarters__description">+44 1241 918425</p>
+        <div className="headquarters__main-wrapper">
+          <div className="headquarters__item">
+            <img className='headquarters__image' src={UKIllustration} alt="United Kingdom illustration" />
+            <div className="headquarters__secondary-wrapper">
+              <h3 className="headquarters__name">United Kingdom</h3>
+              <div className="headquarters__info">
+                <p className="headquarters__description">68 Asfordby Rd</p>
+                <p className="headquarters__description">Alcaston</p>
+                <p className="headquarters__description">SY6 1YA</p>
+                <p className="headquarters__description">+44 1241 918425</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="headquarters__item">
-          <img src={CanadaIllustration} alt="Canada illustration" />
-          <div className="headquarters__wrapper">
-            <h3 className="headquarters__name">Canada</h3>
-            <div className="headquarters__info">
-              <p className="headquarters__description">1528 Eglinton Avenue</p>
-              <p className="headquarters__description">Toronto</p>
-              <p className="headquarters__description">Ontario M4P 1A6</p>
-              <p className="headquarters__description">+1 416 485 2997</p>
+          <div className="headquarters__item">
+            <img src={CanadaIllustration} alt="Canada illustration" />
+            <div className="headquarters__secondary-wrapper">
+              <h3 className="headquarters__name">Canada</h3>
+              <div className="headquarters__info">
+                <p className="headquarters__description">
+                  1528 Eglinton Avenue
+                </p>
+                <p className="headquarters__description">Toronto</p>
+                <p className="headquarters__description">Ontario M4P 1A6</p>
+                <p className="headquarters__description">+1 416 485 2997</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="headquarters__item">
-          <img src={AustraliaIllustration} alt="Australia illustration" />
-          <div className="headquarters__wrapper">
-            <h3 className="headquarters__name">Australia</h3>
-            <div className="headquarters__info">
-              <p className="headquarters__description">36 Swanston Street</p>
-              <p className="headquarters__description">Kewell</p>
-              <p className="headquarters__description">Victoria</p>
-              <p className="headquarters__description">+61 4 9928 3629</p>
+          <div className="headquarters__item">
+            <img src={AustraliaIllustration} alt="Australia illustration" />
+            <div className="headquarters__secondary-wrapper">
+              <h3 className="headquarters__name">Australia</h3>
+              <div className="headquarters__info">
+                <p className="headquarters__description">36 Swanston Street</p>
+                <p className="headquarters__description">Kewell</p>
+                <p className="headquarters__description">Victoria</p>
+                <p className="headquarters__description">+61 4 9928 3629</p>
+              </div>
             </div>
           </div>
         </div>

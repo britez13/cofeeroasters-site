@@ -1,10 +1,9 @@
 import Header from '../components/Header';
 import { Link } from 'react-router-dom';
 import HomeStyled from '../styles/Home.styled';
-import coffeeSVG from '../assets/home/desktop/icon-coffee-bean.svg'
-import giftSVG from '../assets/home/desktop/icon-gift.svg'
-import truckSVG from '../assets/home/desktop/icon-truck.svg'
-
+import coffeeSVG from '../assets/home/desktop/icon-coffee-bean.svg';
+import giftSVG from '../assets/home/desktop/icon-gift.svg';
+import truckSVG from '../assets/home/desktop/icon-truck.svg';
 
 const Home = () => {
   return (
@@ -135,8 +134,42 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='work'>
-        <h4 className='work__title'>How it works</h4>
+      <section className="process">
+        <h4 className="process__title">How it works</h4>
+        <div className="process__first-wrapper">
+          <div className="process__circle1"></div>
+          <div className="process__circle2"></div>
+          <div className="process__circle3"></div>
+        </div>
+        <div className="process__second-wrapper">
+          <div className="process__item">
+            <h3 className="process__number">01</h3>
+            <h4 className="process__name">Pick your coffee</h4>
+            <p className="process__description">
+              Select from our evolving range of artisan coffees. Our beans are
+              ethically sourced and we pay fair prices for them. There are new
+              coffees in all profiles every month for you to try out.
+            </p>
+          </div>
+          <div className="process__item">
+            <h3 className="process__number">02</h3>
+            <h4 className="process__name">Choose the frequency</h4>
+            <p className="process__description">
+              Customize your order frequency, quantity, even your roast style
+              and grind type. Pause, skip or cancel your subscription with no
+              commitment through our online portal.
+            </p>
+          </div>
+          <div className="process__item">
+            <h3 className="process__number">03</h3>
+            <h4 className="process__name">Receive and enjoy!</h4>
+            <p className="process__description">
+              We ship your package within 48 hours, freshly roasted. Sit back
+              and enjoy award-winning world-class coffees curated to provide a
+              distinct tasting experience.
+            </p>
+          </div>
+        </div>
       </section>
     </HomeStyled>
   );
