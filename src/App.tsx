@@ -18,7 +18,8 @@ const theme = {
     grey: '#83888F',
     darkGrey: '#2C343E',
     lightGrey: '#E2DEDB',
-    idk: '#F4F1EB',
+    smoke: '#F4F1EB',
+    white: '#FFFFFF',
   },
 
   fonts: {
