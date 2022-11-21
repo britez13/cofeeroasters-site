@@ -6,6 +6,7 @@ const Header = () => {
   return (
     <HeaderStyle>
       <img src={logo} alt="Cofeeroaster logo" />
+      <div className="icon-menu"></div>
       <Navbar />
     </HeaderStyle>
   );

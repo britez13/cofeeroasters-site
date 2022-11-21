@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         min-height: 100vh;
         background-color: ${({ theme }) => theme.colors.lightCream};
+        scroll-behavior: smooth;
     }
 
     h1, h2, h3, h4, p, ul{
@@ -39,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
         text-decoration: none;
         color: black;
         
-        &:hover, &:visited, &:active {
+        :hover, :visited, :active {
             color: black;
         }
 
