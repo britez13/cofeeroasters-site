@@ -6,23 +6,31 @@ const NavbarStyle = styled.nav`
     gap: 2rem;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        display: none;
-      }
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        position: absolute;
+        z-index: 5;
+        background-color: white;
+        left: 0;
+        width: 100%;
+        top: 8rem;
+    }
 
-    __link {
+    &__link {
       color: ${({ theme }) => theme.colors.grey};
       text-transform: uppercase;
       font-family: ${({ theme }) => theme.fonts.barlow};
       font-size: 1.2rem;
       font-weight: 700;
 
-      /* @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         color: ${({ theme }) => theme.colors.darkGreyBlue};
         text-transform: capitalize;
         font-family: ${({ theme }) => theme.fonts.fraunces};
         font-size: 2.4rem;
         font-weight: 900;
-      } */
+      }
     }
 
     /* @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {

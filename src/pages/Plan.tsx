@@ -1,4 +1,6 @@
-import React, { useRef, useState } from 'react';
+import { useState } from 'react';
+import Modal from '../components/Modal';
+import Order from '../components/Order';
 import PlanStyle from '../styles/Plan.styled';
 
 const Plan = () => {
@@ -16,6 +18,8 @@ const Plan = () => {
     fourth: false,
     fifth: false,
   });
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleDisplay = (e: any) => {
     if (e.target.dataset.accordionPosition === 'first') {
@@ -116,7 +120,20 @@ const Plan = () => {
     }
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e: any) => {
+
+    e.preventDefault()
+
+    if (
+      choices.preferences &&
+      choices.beanType &&
+      choices.quantity &&
+      choices.grindOption &&
+      choices.deliveries
+    ) {
+      setIsModalOpen(true);
+    }
+  };
 
   return (
     <PlanStyle>
@@ -517,42 +534,21 @@ const Plan = () => {
             </div>
           </fieldset>
 
-          <div className="order">
-            <p className="subheading">Order summary</p>
-            <p className="summary">
-              "I drink my coffee as{' '}
-              {choices.preferences ? (
-                <span>{choices.preferences}</span>
-              ) : (
-                <span className="incomplete"></span>
-              )}{' '}
-              , with a{' '}
-              {choices.beanType ? (
-                <span>{choices.beanType}</span>
-              ) : (
-                <span className="incomplete"></span>
-              )}{' '}
-              type of bean. <span>{choices.quantity}</span> ground a la{' '}
-              {choices.grindOption ? (
-                <span>{choices.grindOption}</span>
-              ) : (
-                <span className="incomplete"></span>
-              )}
-              , sent to me{' '}
-              {choices.deliveries ? (
-                <span>{choices.deliveries}</span>
-              ) : (
-                <span className="incomplete"></span>
-              )}
-              "
-            </p>
-          </div>
+          <Order choices={choices} />
 
           <button className="submit-btn" onClick={handleSubmit}>
             Create my plan!
           </button>
         </form>
       </section>
+
+      {/* <Modal
+        choices={choices}
+        modal={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      /> */}
+
+      {isModalOpen && <Modal choices={choices} setIsModalOpen={setIsModalOpen} />}
     </PlanStyle>
   );
 };

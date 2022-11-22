@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import iconHamburger from '../assets/shared/mobile/icon-hamburger.svg';
 
 const HeaderStyle = styled.header`
   margin-inline: auto;
@@ -12,26 +11,40 @@ const HeaderStyle = styled.header`
   .icon-menu {
     display: none;
 
-    /* @media(max-width: ${({theme})=>theme.breakpoints.tablet}) {
-      display: block;
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       position: absolute;
       z-index: 5;
-      right: 1rem;
-      width: 5rem;
-      height: 5rem;
-      background-image: url({iconHamburger});
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-color: gray;
-    } */
-    
+      width: 2.3rem;
+      height: 1.7rem;
+      right: 3%;
 
+      span {
+        display: block;
+        height: 0.2rem;
+        background-color: #333d4b;
+        transition: transform 0.3s ease, translate 0.3s ease, opacity 0.3s ease;
+      }
+
+      &.active {
+        span:first-of-type {
+          transform: rotate(45deg);
+          translate: 0 .5rem;
+        }
+
+        span:nth-of-type(2) {
+          opacity: 0;
+        }
+
+        span:last-of-type {
+          transform: rotate(-45deg);
+          translate: 0 -0.9rem;
+        }
+      }
+    }
   }
-
-
-
-
-
 `;
 
 export default HeaderStyle;
