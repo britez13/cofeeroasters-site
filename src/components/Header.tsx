@@ -20,8 +20,8 @@ const Header = () => {
       </div>
       {/* <Navbar /> */}
 
-      <nav>
-        <ul className="navbar">
+      <nav className={isOpenNavbar ? 'navbar active' : 'navbar'}>
+        <ul>
           <li className="navbar__list">
             <NavLink className="navbar__link" to="/">
               Home

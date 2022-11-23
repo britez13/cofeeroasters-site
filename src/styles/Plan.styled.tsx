@@ -51,7 +51,7 @@ const PlanStyle = styled.main`
       color: ${({ theme }) => theme.colors.lightCream};
       line-height: 2.5rem;
       mix-blend-mode: normal;
-      opacity: 0.8;
+      opacity: 1;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         text-align: start;
@@ -71,7 +71,7 @@ const PlanStyle = styled.main`
     padding-top: 2rem;
     padding-bottom: 7rem;
     background-color: ${({ theme }) => theme.colors.darkGreyBlue};
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
     border-radius: 0.7rem;
     width: min(99.7%, 128rem);
     margin-inline: auto;
@@ -186,7 +186,7 @@ const PlanStyle = styled.main`
       color: ${({ theme }) => theme.colors.white};
       max-width: 32.7rem;
       mix-blend-mode: normal;
-      opacity: 0.9;
+      opacity: 1;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         text-align: start;
@@ -290,6 +290,8 @@ const PlanStyle = styled.main`
     font-weight: 700;
     color: ${({ theme }) => theme.colors.grey};
     cursor: pointer;
+    position: relative;
+    width: 100%;
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       font-size: 3.2rem;
@@ -297,6 +299,24 @@ const PlanStyle = styled.main`
 
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       font-size: 4rem;
+    }
+
+    .arrow {
+      position: absolute;
+      border: solid grey;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      right: 0;
+      top: 50%;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      transition: transform ease 0.5s, border-color 0.5s ease;
+
+      &.active {
+        transform: rotate(220deg);
+        border-color: ${({ theme }) => theme.colors.darkCyan};
+      }
     }
   }
 
@@ -400,11 +420,15 @@ const PlanStyle = styled.main`
     border-radius: 1rem;
     color: ${({ theme }) => theme.colors.white};
 
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      border-radius: 0;
+    }
+
     .subheading {
       font-size: 1.6rem;
       text-transform: uppercase;
       mix-blend-mode: normal;
-      opacity: 0.5;
+      opacity: 1;
       text-align: left;
     }
 
@@ -444,6 +468,11 @@ const PlanStyle = styled.main`
     text-align: center;
     color: ${({ theme }) => theme.colors.lightCream};
     margin-inline: auto;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      margin-inline: 0;
+      margin-left: auto;
+    }
   }
 `;
 

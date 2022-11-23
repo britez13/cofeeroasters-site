@@ -69,7 +69,7 @@ const HomeStyled = styled.main`
       font-size: 1.5rem;
       color: ${({ theme }) => theme.colors.lightCream};
       mix-blend-mode: normal;
-      opacity: 0.8;
+      opacity: 1;
       line-height: 2.5rem;
       padding-inline: 2.5rem;
 
@@ -109,7 +109,9 @@ const HomeStyled = styled.main`
     &__title {
       text-transform: lowercase;
       font-size: 4rem;
-      color: ${({ theme }) => theme.colors.grey};
+      background: -webkit-linear-gradient(#83888f, #eee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         font-size: 11rem;
@@ -238,7 +240,7 @@ const HomeStyled = styled.main`
       font-size: 1.5rem;
       color: ${({ theme }) => theme.colors.lightCream};
       mix-blend-mode: normal;
-      opacity: 0.8;
+      opacity: 1;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         max-width: 54rem;
@@ -328,7 +330,7 @@ const HomeStyled = styled.main`
       max-width: 21.2rem;
       margin-top: 3rem;
       mix-blend-mode: normal;
-      opacity: 0.9;
+      opacity: 1;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         text-align: start;

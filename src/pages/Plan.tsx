@@ -121,8 +121,9 @@ const Plan = () => {
   };
 
   const handleSubmit = (e: any) => {
+    e.preventDefault();
 
-    e.preventDefault()
+    console.log('hey');
 
     if (
       choices.preferences &&
@@ -133,6 +134,8 @@ const Plan = () => {
     ) {
       setIsModalOpen(true);
     }
+
+    // setIsModalOpen(true);
   };
 
   return (
@@ -247,6 +250,11 @@ const Plan = () => {
               onClick={handleDisplay}
             >
               How do you drink your cofee?
+              <span
+                data-accordion-position="first"
+                onClick={handleDisplay}
+                className={isAccordionOpen.first ? 'arrow active' : 'arrow'}
+              ></span>
             </legend>
 
             <div
@@ -306,6 +314,11 @@ const Plan = () => {
               onClick={handleDisplay}
             >
               What type of cofee?
+              <span
+                data-accordion-position="second"
+                onClick={handleDisplay}
+                className={isAccordionOpen.second ? 'arrow active' : 'arrow'}
+              ></span>
             </legend>
 
             <div
@@ -368,6 +381,11 @@ const Plan = () => {
               onClick={handleDisplay}
             >
               How much would you like?
+              <span
+                data-accordion-position="third"
+                onClick={handleDisplay}
+                className={isAccordionOpen.third ? 'arrow active' : 'arrow'}
+              ></span>
             </legend>
 
             <div
@@ -429,6 +447,11 @@ const Plan = () => {
               onClick={handleDisplay}
             >
               Want us to grind them?
+              <span
+                data-accordion-position="fourth"
+                onClick={handleDisplay}
+                className={isAccordionOpen.fourth ? 'arrow active' : 'arrow'}
+              ></span>
             </legend>
 
             <div
@@ -487,6 +510,11 @@ const Plan = () => {
               onClick={handleDisplay}
             >
               How often should we deliver?
+              <span
+                data-accordion-position="fifth"
+                onClick={handleDisplay}
+                className={isAccordionOpen.fifth ? 'arrow active' : 'arrow'}
+              ></span>
             </legend>
 
             <div
@@ -548,7 +576,9 @@ const Plan = () => {
         setIsModalOpen={setIsModalOpen}
       /> */}
 
-      {isModalOpen && <Modal choices={choices} setIsModalOpen={setIsModalOpen} />}
+      {isModalOpen && (
+        <Modal choices={choices} setIsModalOpen={setIsModalOpen} />
+      )}
     </PlanStyle>
   );
 };

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const Modal = styled.div`
   position: fixed;
+  z-index: 100;
   inset: 0 0 0 0;
   width: 100%;
   display: flex;

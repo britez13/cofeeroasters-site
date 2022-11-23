@@ -51,7 +51,7 @@ const AboutStyled = styled.main`
       color: ${({ theme }) => theme.colors.lightCream};
       line-height: 2.5rem;
       mix-blend-mode: normal;
-      opacity: 0.9;
+      opacity: 1;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         text-align: start;
@@ -133,7 +133,7 @@ const AboutStyled = styled.main`
       color: ${({ theme }) => theme.colors.darkGreyBlue};
       line-height: 2.5rem;
       mix-blend-mode: normal;
-      opacity: 0.9;
+      opacity: 1;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         text-align: start;
@@ -224,7 +224,7 @@ const AboutStyled = styled.main`
       line-height: 2.5rem;
       color: ${({ theme }) => theme.colors.lightCream};
       mix-blend-mode: normal;
-      opacity: 0.8;
+      opacity: 1;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         text-align: start;

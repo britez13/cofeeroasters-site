@@ -4,7 +4,6 @@ import Order from './Order';
 
 const Modal = ({ choices, modal, setIsModalOpen }: any) => {
   const modalRef: any = document.getElementById('modal');
-  const bodyHeight = document.body?.scrollHeight;
   console.log(modal);
 
   return createPortal(
@@ -29,7 +28,7 @@ const Modal = ({ choices, modal, setIsModalOpen }: any) => {
             </p>
             <div>
               <p>$14.00/mo</p>
-              <button onClick={() => setIsModalOpen(prev => !prev)}>Checkout</button>
+              <button onClick={() => setIsModalOpen(false)}>Checkout</button>
             </div>
           </div>
       </div>

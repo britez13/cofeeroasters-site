@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import FooterStyled from '../styles/Footer.styled';
-import facebookIcon from '../assets/shared/desktop/icon-facebook.svg'
-import twitterIcon from '../assets/shared/desktop/icon-twitter.svg'
-import instagramIcon from '../assets/shared/desktop/icon-instagram.svg'
+import facebookIcon from '../assets/shared/desktop/icon-facebook.svg';
+import twitterIcon from '../assets/shared/desktop/icon-twitter.svg';
+import instagramIcon from '../assets/shared/desktop/icon-instagram.svg';
 
 const Footer = () => {
   return (
