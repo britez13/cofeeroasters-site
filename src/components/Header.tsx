@@ -15,11 +15,10 @@ const Header = () => {
           className={isOpenNavbar ? 'icon-menu active' : 'icon-menu'}
           onClick={() => setIsOpenNavbar(!isOpenNavbar)}
         >
-          <span className="first"></span>
+          <span></span>
           <span></span>
           <span></span>
         </div>
-        {/* <Navbar /> */}
 
         <nav className={isOpenNavbar ? 'navbar active' : 'navbar'}>
           <ul>

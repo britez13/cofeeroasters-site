@@ -2,13 +2,13 @@ import { Routes, Route } from 'react-router-dom';
 import About from './pages/About';
 import Home from './pages/Home';
 import Plan from './pages/Plan';
-import { ThemeProvider } from 'styled-components';
+import { DefaultTheme, ThemeProvider } from 'styled-components';
 import { Reset } from 'styled-reset';
 import GlobalStyle from './styles/Global.styled';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const theme = {
+const theme: DefaultTheme = {
   colors: {
     darkCyan: '#0E8784',
     lightCyan: '#66D2CF',
