@@ -25,6 +25,7 @@ const Plan = () => {
     if (e.target.dataset.accordionPosition === 'first') {
       if (isAccordionOpen.first) {
         setIsAccordionOpen((prev) => ({ ...prev, first: false }));
+
       } else {
         setIsAccordionOpen((prev) => ({ ...prev, first: true }));
       }
@@ -40,7 +41,7 @@ const Plan = () => {
       } else {
         setIsAccordionOpen((prev) => ({ ...prev, third: true }));
       }
-    } else if (e.target.dataset.accordionPosition === 'fourth') {
+    } else if (e.target.dataset.accordionPosition === 'fourth' && choices.preferences !== "Capsule" ) {
       if (isAccordionOpen.fourth) {
         setIsAccordionOpen((prev) => ({ ...prev, fourth: false }));
       } else {
@@ -74,23 +75,23 @@ const Plan = () => {
     return siblings;
   };
 
-  const getSpanClassName = (accordionPosition: any, choiceSelected: string) => {
-    const valueToCheck = isAccordionOpen[`${accordionPosition}`];
+  // const getSpanClassName = (accordionPosition: any, choiceSelected: string) => {
+  //   const valueToCheck = isAccordionOpen[`${accordionPosition}`];
 
-    if (
-      isAccordionOpen[`${accordionPosition}`] &&
-      choices[`${choiceSelected}`]
-    ) {
-      return 'selected';
-    } else if (
-      !isAccordionOpen[`${accordionPosition}`] &&
-      choices[`${choiceSelected}`]
-    ) {
-      return 'selected close';
-    } else {
-      return '';
-    }
-  };
+  //   if (
+  //     isAccordionOpen[`${accordionPosition}`] &&
+  //     choices[`${choiceSelected}`]
+  //   ) {
+  //     return 'selected';
+  //   } else if (
+  //     !isAccordionOpen[`${accordionPosition}`] &&
+  //     choices[`${choiceSelected}`]
+  //   ) {
+  //     return 'selected close';
+  //   } else {
+  //     return '';
+  //   }
+  // };
 
   const handleChange = (e: any) => {
     // console.log(e.target.parentElement.className = "active")
@@ -109,6 +110,13 @@ const Plan = () => {
 
     if (e.target.name === 'preferences') {
       setChoices((prev) => ({ ...prev, preferences: e.target.value }));
+
+      
+      if(e.target.value === 'Capsule') {
+        setIsAccordionOpen((prev) => ({ ...prev, fourth: false }));
+      }
+
+
     } else if (e.target.name === 'bean type') {
       setChoices((prev) => ({ ...prev, beanType: e.target.value }));
     } else if (e.target.name === 'quantity') {
@@ -123,18 +131,23 @@ const Plan = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
-    console.log('hey');
-
     if (
       choices.preferences &&
       choices.beanType &&
       choices.quantity &&
-      choices.grindOption &&
       choices.deliveries
     ) {
-      setIsModalOpen(true);
-    }
 
+      if(choices.preferences === "Capsule") {
+        setIsModalOpen(true);
+      }
+
+      else if(choices.grindOption) {
+        setIsModalOpen(true);
+      }
+
+    }
+    
     // setIsModalOpen(true);
   };
 
@@ -187,7 +200,7 @@ const Plan = () => {
       </section>
 
       <section className="options">
-        <div className="inside-nav">
+        {/* <div className="inside-nav">
           <ol>
             <li>
               <a href="#preferences">
@@ -240,7 +253,7 @@ const Plan = () => {
               </a>
             </li>
           </ol>
-        </div>
+        </div> */}
 
         <form id="form">
           <fieldset>
@@ -445,12 +458,14 @@ const Plan = () => {
               id="grindOption"
               data-accordion-position="fourth"
               onClick={handleDisplay}
+              className={choices.preferences === 'Capsule' ? 'disable' : ''}
             >
               Want us to grind them?
               <span
                 data-accordion-position="fourth"
                 onClick={handleDisplay}
-                className={isAccordionOpen.fourth ? 'arrow active' : 'arrow'}
+                // className={isAccordionOpen.fourth ? 'arrow active' : 'arrow'}
+                className={choices.preferences === "Capsule" ? "arrow disable" : isAccordionOpen.fourth ? 'arrow active' : 'arrow' }
               ></span>
             </legend>
 

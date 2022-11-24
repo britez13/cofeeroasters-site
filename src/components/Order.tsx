@@ -6,24 +6,50 @@ const Order = ({choices}: any) => {
     <OrderStyle>
       <div className="order">
         <p className="subheading">Order summary</p>
-        <p className="summary">
-          "I drink my coffee as{' '}
-          {choices.preferences ? (
-            <span>{choices.preferences}</span>
-          ) : (
-            <span className="incomplete"></span>
-          )}{' '}
+        <div className="summary">
+          “
+          {
+            !choices.preferences ? (
+              <p>
+                {' '}
+                I drink my cofee as <span className="incomplete"></span>
+              </p>
+            ) : choices.preferences === 'Capsule' ? (
+              <p>
+                I drink my cofee using <span>{choices.preferences + 's'}</span>
+              </p>
+            ) : (
+              <p>
+                I drink my coffe as <span>{choices.preferences}</span>
+              </p>
+            )
+
+            //  (
+            //   " " <span>{choices.preferences}</span>
+            // ) : (
+            //   <span className="incomplete"></span>
+            // )
+          }{' '}
           , with a{' '}
           {choices.beanType ? (
             <span>{choices.beanType}</span>
           ) : (
             <span className="incomplete"></span>
           )}{' '}
-          type of bean. <span>{choices.quantity}</span> ground a la{' '}
-          {choices.grindOption ? (
-            <span>{choices.grindOption}</span>
+          type of bean.{' '}
+          {choices.quantity ? (
+            <span>{choices.quantity + ' '}</span>
           ) : (
             <span className="incomplete"></span>
+          )}{' '}
+          {choices.preferences === 'Capsule' ? null : choices.grindOption ? (
+            <p>
+              ground a la <span>{choices.grindOption}</span>
+            </p>
+          ) : (
+            <p>
+              ground a la <span className="incomplete"></span>
+            </p>
           )}
           , sent to me{' '}
           {choices.deliveries ? (
@@ -31,8 +57,8 @@ const Order = ({choices}: any) => {
           ) : (
             <span className="incomplete"></span>
           )}
-          "
-        </p>
+          .”
+        </div>
       </div>
     </OrderStyle>
   );

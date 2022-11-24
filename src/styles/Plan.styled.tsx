@@ -8,7 +8,7 @@ const PlanStyle = styled.main`
     width: min(95vw, 128rem);
     height: 40rem;
     margin-inline: auto;
-    background-image: url('../../src/assets/plan/mobile/image-hero-blackcup.jpg');
+    background-image: url('/assets/plan/mobile/image-hero-blackcup.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 0.7rem;
@@ -19,15 +19,15 @@ const PlanStyle = styled.main`
     gap: 2rem;
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      background-image: url('../../src/assets/plan/tablet/image-hero-blackcup.jpg');
+      background-image: url('/assets/plan/tablet/image-hero-blackcup.jpg');
       align-items: flex-start;
-      padding-left: 7rem;
+      padding-left: 5rem;
     }
 
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-      background-image: url('../../src/assets/plan/desktop/image-hero-blackcup.jpg');
+      background-image: url('/assets/plan/desktop/image-hero-blackcup.jpg');
       height: 44.5rem;
-      padding-left: 10rem;
+      padding-left: 8.5rem;
       gap: 3rem;
     }
 
@@ -284,14 +284,17 @@ const PlanStyle = styled.main`
   legend {
     /* margin-bottom: 5.6rem; */
     margin-bottom: 3.2rem;
-    font: inherit;
-    /* font-size: 3rem; */
+    font-family: ${({ theme }) => theme.fonts.fraunces};
     font-size: 2.4rem;
     font-weight: 700;
     color: ${({ theme }) => theme.colors.grey};
     cursor: pointer;
     position: relative;
     width: 100%;
+
+    &.disable {
+      color: ${({ theme }) => theme.colors.lightGrey};
+    }
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       font-size: 3.2rem;
@@ -312,6 +315,10 @@ const PlanStyle = styled.main`
       transform: rotate(45deg);
       -webkit-transform: rotate(45deg);
       transition: transform ease 0.5s, border-color 0.5s ease;
+
+      &.disable {
+        border-color: ${({ theme }) => theme.colors.lightGrey};
+      }
 
       &.active {
         transform: rotate(220deg);
@@ -404,9 +411,6 @@ const PlanStyle = styled.main`
   }
 
   .radio-container.active {
-    /* transform: scaleY(1);
-    transform-origin: top; */
-    /* max-height: 25rem; */
     max-height: 45.2rem;
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -414,47 +418,8 @@ const PlanStyle = styled.main`
     }
   }
 
-  .order {
-    background-color: ${({ theme }) => theme.colors.darkGrey};
-    padding: 3.2rem 2.5rem;
-    border-radius: 1rem;
-    color: ${({ theme }) => theme.colors.white};
-
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-      border-radius: 0;
-    }
-
-    .subheading {
-      font-size: 1.6rem;
-      text-transform: uppercase;
-      mix-blend-mode: normal;
-      opacity: 1;
-      text-align: left;
-    }
-
-    .summary {
-      font-family: inherit;
-      text-align: left;
-      margin-top: 0.8rem;
-      font-style: normal;
-      font-weight: 900;
-      font-size: 2.4rem;
-      line-height: 4rem;
-
-      span {
-        color: ${({ theme }) => theme.colors.darkCyan};
-
-        &.incomplete {
-          width: 6rem;
-          border-bottom: 1px solid ${({ theme }) => theme.colors.darkCyan};
-          display: inline-block;
-        }
-      }
-    }
-  }
-
   .submit-btn {
-    /* all: unset; */
+    font-family: ${({ theme }) => theme.fonts.fraunces};
     max-width: 21.7rem;
     display: inline-block;
     background-color: ${({ theme }) => theme.colors.darkCyan};
@@ -462,12 +427,16 @@ const PlanStyle = styled.main`
     border: none;
     border-radius: 0.6rem;
     padding: 1.5rem 3.5rem;
-    font-family: inherit;
     font-weight: 900;
     font-size: 1.8rem;
     text-align: center;
     color: ${({ theme }) => theme.colors.lightCream};
     margin-inline: auto;
+    transition: background-color 0.3s ease;
+
+    :hover {
+      background-color: ${({ theme }) => theme.colors.lightCyan};
+    }
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       margin-inline: 0;

@@ -8,29 +8,47 @@ const Modal = ({ choices, modal, setIsModalOpen }: any) => {
 
   return createPortal(
     <ModalStyle>
-      
-        <div className="container">
-          <div className="heading">
-            <h1>Order summary</h1>
+      <div className="container">
+        <div className="heading">
+          <h1>Order summary</h1>
+        </div>
+        <div className="body">
+          <div className="summary">
+            <p>“</p>
+            {choices.preferences === 'Capsule' ? (
+              <p>
+                I drink my coffee using{' '}
+                <span>{choices.preferences + 's '} </span>
+              </p>
+            ) : (
+              <p>
+                I drink my coffee as <span>{choices.preferences}</span>
+              </p>
+            )}{' '}
+            <p>, whith a</p>
+            <span> {choices.beanType}</span> <p> type of bean </p>
+            <span> {choices.quantity}</span>{' '}
+            {/* <span>{choices.grindOption}</span>, sent to me{' '} */}
+            {choices.preferences === 'Capsule' ? null : (
+              <p>
+                ground a la
+                <span> {choices.grindOption}</span>
+              </p>
+            )}{' '}
+            <p>sent to me</p>
+            <span> {choices.deliveries}</span>
+            <p>.”</p>
           </div>
-          <div className="body">
-            <p className="summary">
-              "I drink my coffee as <span>{choices.preferences}</span>, with a{' '}
-              <span>{choices.beanType}</span> type of bean.{' '}
-              <span>{choices.quantity}</span> ground a la{' '}
-              <span>{choices.grindOption}</span>, sent to me{' '}
-              <span>{choices.deliveries}</span>"
-            </p>
-            <p className="guide">
-              Is this correct? You can proceed to checkout or go back to plan
-              selection if something is off. Subscription discount codes can
-              also be redeemed at the checkout.{' '}
-            </p>
-            <div>
-              <p>$14.00/mo</p>
-              <button onClick={() => setIsModalOpen(false)}>Checkout</button>
-            </div>
+          <p className="guide">
+            Is this correct? You can proceed to checkout or go back to plan
+            selection if something is off. Subscription discount codes can also
+            be redeemed at the checkout.{' '}
+          </p>
+          <div>
+            <p>$14.00/mo</p>
+            <button onClick={() => setIsModalOpen(false)}>Checkout</button>
           </div>
+        </div>
       </div>
     </ModalStyle>,
     modalRef

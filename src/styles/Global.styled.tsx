@@ -1,4 +1,4 @@
-import { createGlobalStyle, GlobalStyleComponent } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     *, *::before, *::after {
@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         min-height: 100vh;
-        background-color: ${({ theme }) => theme.colors.lightCream};
+        background-color: white;
         scroll-behavior: smooth;
     }
 
@@ -43,10 +43,7 @@ const GlobalStyle = createGlobalStyle`
         :hover, :visited, :active {
             color: black;
         }
-
-    }
-
-    
+    } 
 `;
 
 export default GlobalStyle;

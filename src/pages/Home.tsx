@@ -1,9 +1,8 @@
-import Header from '../components/Header';
 import { Link } from 'react-router-dom';
 import HomeStyled from '../styles/Home.styled';
-import coffeeSVG from '../assets/home/desktop/icon-coffee-bean.svg';
-import giftSVG from '../assets/home/desktop/icon-gift.svg';
-import truckSVG from '../assets/home/desktop/icon-truck.svg';
+import coffeeSVG from '/assets/home/desktop/icon-coffee-bean.svg';
+import giftSVG from '/assets/home/desktop/icon-gift.svg';
+import truckSVG from '/assets/home/desktop/icon-truck.svg';
 
 const Home = () => {
   return (
@@ -16,7 +15,7 @@ const Home = () => {
             curated artisan coffees from our best roasters delivered directly to
             your door, at your schedule.
           </p>
-          <Link className="hero__link" to="/subscribe">
+          <Link className="hero__link" to="/plan">
             Create your plan
           </Link>
         </div>
@@ -28,7 +27,7 @@ const Home = () => {
           <div className="collection__item">
             <img
               className="collection__image"
-              src="../../src/assets/home/desktop/image-gran-espresso.png"
+              src="/assets/home/desktop/image-gran-espresso.png"
               alt="Gran Espresso image"
             />
             <div>
@@ -43,7 +42,7 @@ const Home = () => {
           <div className="collection__item">
             <img
               className="collection__image"
-              src="../../src/assets/home/desktop/image-planalto.png"
+              src="/assets/home/desktop/image-planalto.png"
               alt="Planalto image"
             />
             <div>
@@ -58,7 +57,7 @@ const Home = () => {
           <div className="collection__item">
             <img
               className="collection__image"
-              src="../../src/assets/home/desktop/image-piccollo.png"
+              src="/assets/home/desktop/image-piccollo.png"
               alt="Picollo image"
             />
             <div>
@@ -73,7 +72,7 @@ const Home = () => {
           <div className="collection__item">
             <img
               className="collection__image"
-              src="../../src/assets/home/desktop/image-danche.png"
+              src="/assets/home/desktop/image-danche.png"
               alt="Danche image"
             />
             <div>

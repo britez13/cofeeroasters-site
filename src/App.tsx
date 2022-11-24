@@ -8,7 +8,7 @@ import GlobalStyle from './styles/Global.styled';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const theme = {
+const theme: any = {
   colors: {
     darkCyan: '#0E8784',
     lightCyan: '#66D2CF',
@@ -22,19 +22,14 @@ const theme = {
     white: '#FFFFFF',
   },
 
-  fonts: {
+  fonts:  {
     barlow: "'Barlow', sans-serif",
     fraunces: "'Fraunces', serif",
   },
 
-  // classes: {
-  //   container: '12.8rem'
-  // },
-
   breakpoints: {
     tablet: '600px',
     desktop: '992px',
-    // lgDesktop: '1200px',
   },
 };
 

@@ -10,7 +10,7 @@ const HomeStyled = styled.main`
     width: min(95%, 128rem); */
     height: 50rem;
     border-radius: 1rem;
-    background-image: url('../../src/assets/home/mobile/image-hero-coffeepress.jpg');
+    background-image: url('/assets/home/mobile/image-hero-coffeepress.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -18,14 +18,15 @@ const HomeStyled = styled.main`
     align-items: center;
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      background-image: url('../../src/assets/home/tablet/image-hero-coffeepress.jpg');
+      background-image: url('/assets/home/tablet/image-hero-coffeepress.jpg');
       justify-content: flex-start;
       padding-left: 5rem;
     }
 
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       height: 60rem;
-      background-image: url('../../src/assets/home/desktop/image-hero-coffeepress.jpg');
+      background-image: url('/assets/home/desktop/image-hero-coffeepress.jpg');
+      padding-left: 8.5rem;
     }
 
     &__wrapper {
@@ -41,7 +42,7 @@ const HomeStyled = styled.main`
       }
 
       @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-        max-width: 50rem;
+        max-width: 54rem;
       }
     }
 
@@ -61,7 +62,7 @@ const HomeStyled = styled.main`
         text-align: start;
         font-size: 7.2rem;
         line-height: 7.2rem;
-        max-width: 49.3rem;
+        max-width: 52rem;
       }
     }
 
@@ -94,6 +95,11 @@ const HomeStyled = styled.main`
       padding-inline: 2.5rem;
       padding-block: 2rem;
       border-radius: 0.7rem;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: ${({ theme }) => theme.colors.lightCyan};
+      }
     }
   }
 
@@ -111,6 +117,7 @@ const HomeStyled = styled.main`
       font-size: 4rem;
       background: -webkit-linear-gradient(#83888f, #eee);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {

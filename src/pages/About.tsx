@@ -1,7 +1,7 @@
 import AboutStyled from '../styles/About.styled';
-import UKIllustration from '../assets/about/desktop/illustration-uk.svg';
-import CanadaIllustration from '../assets/about/desktop/illustration-canada.svg';
-import AustraliaIllustration from '../assets/about/desktop/illustration-australia.svg';
+import UKIllustration from '/assets/about/desktop/illustration-uk.svg';
+import CanadaIllustration from '/assets/about/desktop/illustration-canada.svg';
+import AustraliaIllustration from '/assets/about/desktop/illustration-australia.svg';
 
 const About = () => {
   return (
@@ -19,7 +19,7 @@ const About = () => {
       <section className="commitment">
         <img
           className="commitment__image"
-          src="../../src/assets/about/mobile/image-commitment.jpg"
+          src="/assets/about/mobile/image-commitment.jpg"
           alt="Our commitment image"
         />
         <div className="commitment__info">

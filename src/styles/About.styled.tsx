@@ -8,7 +8,7 @@ const AboutStyled = styled.main`
     height: 40rem;
     width: min(100%, 128rem);
     margin-inline: auto;
-    background-image: url('../../src/assets/about/mobile/image-hero-whitecup.jpg');
+    background-image: url('/assets/about/mobile/image-hero-whitecup.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 0.7rem;
@@ -18,15 +18,15 @@ const AboutStyled = styled.main`
     align-items: center;
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      background-image: url('../../src/assets/about/tablet/image-hero-whitecup.jpg');
+      background-image: url('/assets/about/tablet/image-hero-whitecup.jpg');
       align-items: flex-start;
       padding-left: 5rem;
     }
 
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-      background-image: url('../../src/assets/about/desktop/image-hero-whitecup.jpg');
+      background-image: url('/assets/about/desktop/image-hero-whitecup.jpg');
       height: 45rem;
-      padding-left: 8rem;
+      padding-left: 8.5rem;
     }
 
     &__title {
@@ -172,7 +172,7 @@ const AboutStyled = styled.main`
     &__image {
       width: 27.9rem;
       height: 15.6rem;
-      background-image: url('../../src/assets/about/mobile/image-quality.jpg');
+      background-image: url('/src/assets/about/mobile/image-quality.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       border-radius: 0.7rem;
@@ -181,7 +181,7 @@ const AboutStyled = styled.main`
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         width: 57.3rem;
         height: 32rem;
-        background-image: url('../../src/assets/about/tablet/image-quality.jpg');
+        background-image: url('/assets/about/tablet/image-quality.jpg');
 
         margin-top: -15rem;
       }
@@ -189,7 +189,7 @@ const AboutStyled = styled.main`
       @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         width: 44.5rem;
         height: 47.4rem;
-        background-image: url('../../src/assets/about/desktop/image-quality.jpg');
+        background-image: url('/assets/about/desktop/image-quality.jpg');
         margin-top: -8rem;
       }
     }
